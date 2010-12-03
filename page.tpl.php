@@ -26,9 +26,9 @@
       <div id="header">
         <div id="header-bottom" class="clearfix">
         <div id="logo" style="float:left;height:60px;padding-top:20px;">
-            <a href="<?php print $base_path ?>" title="Træningsøvelser og træningsprogrammer"><img src="/sites/all/themes/motionsplan/images/logo.gif" alt="Træningsøvelser og træningsprogrammer" /></a>
+            <a href="<?php print $base_path ?>" title="Træningsøvelser og træningsprogrammer"><img src="<?php print $base_path . $directory; ?>/images/logo.gif" alt="Træningsøvelser og træningsprogrammer" /></a>
         </div>
-        
+
         <?php if ($primary_links): ?>
         <div id="primary-menu" style="margin-top:55px;">
           <?php print menu_tree($menu_name = 'primary-links'); ?>
@@ -41,11 +41,11 @@
         <?php if ($preface_first || $preface_middle || $preface_last || $mission): ?>
         <div id="preface-wrapper" class="<?php print $prefaces; ?> clearfix">
           <?php if ($mission): ?>
-          <div id="mission"> 
+          <div id="mission">
             <?php print $mission; ?>
           </div>
           <?php endif; ?>
-        
+
           <?php if ($preface_first): ?>
           <div id="preface-first" class="column">
             <?php print $preface_first; ?>
@@ -69,13 +69,13 @@
 
       <div id="main">
         <div id="main-wrapper" class="clearfix">
-          
+
           <?php if ($breadcrumb): ?>
           <div id="breadcrumb">
             <?php print $breadcrumb; ?>
           </div><!-- /breadcrumb -->
           <?php endif; ?>
-        
+
           <?php if ($sidebar_first): ?>
           <div id="sidebar-first">
             <?php print $sidebar_first; ?>
@@ -95,7 +95,7 @@
               <?php print $content_top; ?>
             </div><!-- /content-top -->
             <?php endif; ?>
-            
+
             <div id="content">
               <?php if ($tabs): ?>
               <div id="content-tabs">
@@ -107,7 +107,7 @@
                 <?php if ($title): ?>
                 <h1 class="title"><?php print $title; ?></h1>
                 <?php endif; ?>
-                
+
                 <?php if (($sidebar_first) && ($sidebar_last)) : ?>
                 <?php if ($sidebar_last): ?>
                 <div id="sidebar-last">
@@ -115,7 +115,7 @@
                 </div><!-- /sidebar_last -->
                 <?php endif; ?>
                 <?php endif; ?>
-                
+
                 <?php print $content; ?>
               </div><!-- /content-inner -->
             </div><!-- /content -->
@@ -126,7 +126,7 @@
             </div><!-- /content-bottom -->
             <?php endif; ?>
           </div><!-- /content-wrapper -->
-          
+
           <?php if ((!$sidebar_first) && ($sidebar_last)) : ?>
             <?php if ($sidebar_last): ?>
             <div id="sidebar-last">
@@ -170,7 +170,7 @@
             <?php endif; ?>
           </div><!-- /footer -->
           <?php endif; ?>
-          
+
         </div><!-- /main-wrapper -->
       </div><!-- /main -->
     </div><!-- /page -->
