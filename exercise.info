@@ -1,35 +1,27 @@
-; $Id: acquia_marina.info,v 1.1.2.1 2008/10/18 00:38:38 jwolf Exp $
-
 name = Exercise
-description = Based on <a href="http://www.acquia.com">Acquia's</a> Marina. Includes advanced theme settings and 15 flexible content regions for a variety of layouts. By <a href="http://www.topnotchthemes.com">TopNotchThemes</a>
+description = Theme for motionsplan.dk
+base theme = acquia_marina
 
 core = 6.x
 engine = phptemplate
-stylesheets[all][] = style.css
-stylesheets[all][] = icons.css
+stylesheets[all][] = exercise.css
 stylesheets[print][] = print.css
+
 regions[sidebar_first] = sidebar first
 regions[sidebar_last] = sidebar last
-regions[header_middle] = header middle
-regions[header_last] = header last
-regions[preface_first] = preface first
-regions[preface_middle] = preface middle
-regions[preface_last] = preface last
+regions[header_top] = header top
+regions[header] = header
+regions[preface_top] = preface top
+regions[preface_bottom] = preface bottom
 regions[content_top] = content top
+regions[content] = content
 regions[content_bottom] = content bottom
-regions[postscript_first] = postscript first
-regions[postscript_middle] = postscript middle
-regions[postscript_last] = postscript last
-regions[footer_top] = footer top
+regions[postscript_top] = postscript top
+regions[postscript_bottom] = postscript bottom
 regions[footer] = footer
+regions[node_top] = node top
 regions[node_bottom] = node bottom
-features[] = logo
-features[] = name
-features[] = slogan
-features[] = mission
-features[] = node_user_picture
-features[] = comment_user_picture
-features[] = search
-features[] = favicon
-features[] = primary_links
+
+; Inherit Skinr styles from parent themes
+skinr[options][inherit_skins] = true
 

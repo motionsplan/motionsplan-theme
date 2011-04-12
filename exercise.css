@@ -1,0 +1,67 @@
+h2.alternative {
+    font-size:9pt;
+}
+
+.node-type-story .content {
+    margin-bottom:10px;
+}
+
+
+.exercistlist .photo {
+    float:left;
+    padding-right:10px;
+}
+
+.exercistlist HR {
+    clear:left;
+}
+
+.exercistlist {
+    padding-top:10px;
+}
+.exercistlist H2 {
+    font-size:12pt;
+    font-weight:bold;
+}
+
+.intro {
+    padding-top:8px;
+    font-style: italic;
+}
+.exercise H4 {
+    padding-top:10px;
+}
+
+.exerciseimg {
+    float:left;
+    padding-right:5px;
+}
+.exerciseimg H5 {
+    font-size:8pt;
+    font-weight:normal;
+}
+
+input.form-submit {
+  background: transparent url(../acquia_marina/images/blue-button.png) repeat-x 0 0;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%; /* 12px/12px */
+  font-weight: bold;
+  margin: 0 4px;
+  padding: 2px 4px;
+  text-transform: uppercase;
+  outline: 1px solid #9BABB0;
+  -moz-border-radius: 4px;
+  -moz-outline-radius: 4px;
+  border-radius: 4px;
+}
+
+/* Hover style for form buttons */
+form input.form-submit:hover,
+form input.form-submit.hover,
+form input.form-submit:focus {
+  background-position: 0 100%;
+  cursor: pointer;
+}
