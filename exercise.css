@@ -65,3 +65,24 @@ form input.form-submit:focus {
   background-position: 0 100%;
   cursor: pointer;
 }
+
+.transparency {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 700px;
+  height: 100px;
+  background-color: #000;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+}
+
+.slideshow {
+  position: absolute;
+  bottom: 00px;
+  left: 10px;
+  width: 680px;  
+}
+
+
