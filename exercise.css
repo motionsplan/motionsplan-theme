@@ -68,7 +68,7 @@ form input.form-submit:focus {
 
 .transparency {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: 0;
   width: 700px;
   height: 100px;
@@ -80,9 +80,24 @@ form input.form-submit:focus {
 
 .slideshow {
   position: absolute;
-  bottom: 00px;
+  bottom: 10px;
   left: 10px;
-  width: 680px;  
+  width: 700px;  
 }
 
+.slideshow h2 {
+  padding-bottom: 0px;
+  margin-bottom: 5px;
+}
 
+.slideshow p {
+  margin-top: 0px;
+}
+
+.page-node .transparency {
+  bottom: 15px;
+}
+
+.page-node .slideshow {
+  bottom: 20px;
+}
