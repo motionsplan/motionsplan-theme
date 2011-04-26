@@ -1,6 +1,4 @@
-<?php
-if($page) {
-?>
+<?php if ($page): ?>
 <div class="exercise node <?php print $node_classes; ?>">
     <?php
     if($node->field_alternative_titles[0]['value'] != '') {
@@ -77,30 +75,31 @@ if($page) {
   <?php endif; ?>
 
 </div>
-<?php
-}
-else {
-?>
+<?php else: ?>
 <div class="exercistlist">
     <?php
-    if(!empty($node->field_exercise_images[0]['filepath'])) {
-        $img = $node->field_exercise_images[0]['filepath'];
-        $img = str_replace('/files/','/files/imagecache/exercisePictureList/',$img);
-        echo '<div class="photo"><a href="'.url('node/'.$node->nid).'"><img src="/'.$img.'" alt="" /></a></div>';
+    $presetname = 'exercisePictureList';
+    $preset = imagecache_preset_by_name($presetname);
+
+    if (!empty($node->field_exercise_images[0]['filepath'])) {
+        $src = $node->field_exercise_images[0]['filepath'];
+        $dst = imagecache_create_path($presetname, $src);
+        if (file_exists($dst) || imagecache_build_derivative($preset['actions'], $src, $dst)) {
+            $file = $dst;        
+            echo '<div class="photo"><a href="'.url('node/'.$node->nid).'"><img src="/'.$file.'" alt="" /></a></div>';
+        }
     }
     ?>
-    <h2><a href="<?=url('node/'.$node->nid);?>"><?=$node->title?></a></h2>
-    <?=$node->field_exercise_intro[0]['value']?>
+    <h2><a href="<?php print url('node/'.$node->nid); ?>"><?php print $node->title; ?></a></h2>
+    <?php print $node->field_exercise_intro[0]['value']; ?>
     <br />
-    <?php echo l('Vis '.$node->title,'node/'.$node->nid); ?>
+    <?php print l('Vis '.$node->title,'node/'.$node->nid); ?>
     <?php
     if(arg(0) == 'exerciseprogram' && arg(1) == 'show') {
         $dURL = url('exerciseprogram/show/'.arg(2).'/delete/'.$node->nid);
-	echo '| <a href="javascript:void(0)" onclick="if(confirm(\'Er du sikker på du vil slette øvelsen?\'))location.href=\''.$dURL.'\'" />Slet øvelse fra program</a>';
+	    echo '| <a href="javascript:void(0)" onclick="if(confirm(\'Er du sikker på du vil slette øvelsen?\'))location.href=\''.$dURL.'\'" />Slet øvelse fra program</a>';
     }
     ?>
     <hr />
 </div>
-<?php
-}
-?>
+<?php endif; ?>
