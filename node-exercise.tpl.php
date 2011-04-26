@@ -6,31 +6,13 @@
         foreach($node->field_alternative_titles as $t) {
             $titles[] = $t['value'];
         }
-        echo '<h2 class="alternative"><strong>Alternative navne:</strong> '.implode(", ",$titles).'</h2>';
+        echo '<h2 class="alternative"><strong>Alternative navne:</strong> '.implode(", ", $titles).'</h2>';
     }
     
      
     echo '<div class="intro">'.$node->field_exercise_intro[0]['safe'].'</div>';
-    echo '<h4>Sådan udføres øvelsen</h4>';
-    echo '<div class="guide">'.$node->field_exercise_guide[0]['value'].'</div>';
-    
-    echo '<div style="clear:right;font-size:1px;"></div>';
-    
-    if(sizeof($node->field_exercise_videos)>0) {
-        $videoHTML = '';
-        foreach($node->field_exercise_videos as $video) {
-            if(!empty($video['view'])) {
-                $videoHTML .= '<div class="video">' . $video['view'] . '</div>';
-            }
-        }
-        if($videoHTML != '') {
-            echo '<h4>Video af øvelsen</h4>';
-        }
-        echo $videoHTML;  
-    }
-    
+
     if($node->field_exercise_images[0]['view']!='') {
-        echo '<h4>Billeder af øvelsen</h4>';
         foreach($node->field_exercise_images as $img) {
             echo '<div class="exerciseimg">';
             if($img['data']['description']!='') {
@@ -41,19 +23,34 @@
         }
         echo '<div style="clear:both;"></div>';
     }
+
+    echo '<h4>Sådan udføres øvelsen</h4>';
+    echo '<div class="guide">'.$node->field_exercise_guide[0]['value'].'</div>';
+    
+    echo '<div style="clear:right;font-size:1px;"></div>';
+    
+    if (sizeof($node->field_exercise_videos)>0) {
+        $videoHTML = '';
+        foreach($node->field_exercise_videos as $video) {
+            if(!empty($video['view'])) {
+                $videoHTML .= '<div class="video">' . $video['view'] . '</div>';
+            }
+        }
+        echo $videoHTML;  
+    }
     ?>
 
-  <?php if ($links): ?>
-  <div class="links">
-    <?php print $links; ?>
-  </div>
-  <?php endif; ?>
+    <?php if ($links): ?>
+    <div class="links">
+        <?php print $links; ?>
+    </div>
+    <?php endif; ?>
 
-  <?php if ($node_bottom && !$teaser): ?>
-  <div id="node-bottom">
-    <?php print $node_bottom; ?>
-  </div>
-  <?php endif; ?>
+    <?php if ($node_bottom && !$teaser): ?>
+    <div id="node-bottom">
+        <?php print $node_bottom; ?>
+    </div>
+    <?php endif; ?>
 
 </div>
 <?php else: ?>
