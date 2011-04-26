@@ -11,6 +11,7 @@
     
      
     echo '<div class="intro">'.$node->field_exercise_intro[0]['safe'].'</div>';
+    echo '<br />';
 
     if($node->field_exercise_images[0]['view']!='') {
         foreach($node->field_exercise_images as $img) {
