@@ -14,7 +14,6 @@
     echo '<h4>Sådan udføres øvelsen</h4>';
     echo '<div class="guide">'.$node->field_exercise_guide[0]['value'].'</div>';
     
-    
     echo '<div style="clear:right;font-size:1px;"></div>';
     
     if(sizeof($node->field_exercise_videos)>0) {
@@ -27,23 +26,7 @@
         if($videoHTML != '') {
             echo '<h4>Video af øvelsen</h4>';
         }
-        if(!empty($user->uid)) {
-            echo $videoHTML;  
-        }
-        else {
-            echo '<p>
-                Der er tilknyttet en video til denne øvelse.<br />
-                Du skal dog være 
-                <a href="/user?destination=node/'.$node->nid.'">registeret bruger</a>
-                for at se videoen.
-                </p>
-                <p>
-                <strong><a href="/user/register?destination=node/'.$node->nid.'">
-                Klik her for at registere dig som bruger GRATIS</a></strong>
-                </p>
-            ';
-        }
-        
+        echo $videoHTML;  
     }
     
     if($node->field_exercise_images[0]['view']!='') {
@@ -58,8 +41,6 @@
         }
         echo '<div style="clear:both;"></div>';
     }
-    
-    
     ?>
 
   <?php if ($links): ?>
