@@ -7,7 +7,6 @@
 
   <head>
     <title><?php print $head_title; ?></title>
-    <?php echo motionsplanutils_meta(); ?>
     <meta name="verify-v1" content="Vu5VONWafHSE/ymfqPFjue2CuRyy1GlObGsCA5F4lNQ=" >
     <?php print $head; ?>
     <?php print $styles; ?>
